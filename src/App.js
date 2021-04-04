@@ -1,56 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
+
+import Homepage from './components/Homepage/';
+import Login from './components/Login';
+import Navbar from './components/Navbar';
+import Cart from './components/Cart';
+
+import { useSelector } from 'react-redux'
+import { selectUser } from './features/appSlice';
+import { selectCart } from './features/cartSlice';
+
 function App() {
+
+  // let user = useSelector(selectUser);
+  let cart = useSelector(selectCart);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <Router>
+        {/* {!user ? <Login /> : */}
+        <Navbar cart={cart} />
+        <>
+          <Switch>
+            <Route exact path='/'>
+              <Homepage />
+            </Route>
+            <Route exact path='/login'>
+              <Login />
+            </Route>
+            <Route exact path='/cart'>
+              <Cart />
+            </Route>
+            <Redirect to='/' />
+          </Switch></>
+        {/* } */}
+      </Router>
+
     </div>
   );
 }

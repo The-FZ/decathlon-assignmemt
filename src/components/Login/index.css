@@ -1,0 +1,100 @@
+:root{
+  --background_color: #f2f2f2;
+  --border-color: #666;
+  --container-background: #5c00e6;
+  --shadow-color: #333;
+  --button-text-color: #fff;
+  --label-text-color: #666;
+  --input--focus-text-color:#333;
+  --form-container-background: #fff;
+  --error-container-color: #f33;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: #f2f2fa;
+}
+
+.login__heading{
+  margin-bottom: 30px;
+}
+
+.login__form__container{
+  width:30%;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: 2px 2px 15px 1px var(--shadow-color);
+  background-color: var(--form-container-background);
+}
+
+.inputfield__container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inputfield__container .input__styling:focus + .label__styling,
+input:valid + .label__styling{
+  transform: translate(0, -6em) scale(0.8);
+  color: var(--input--focus-text-color);
+  font-weight: bold;
+}
+
+.label__styling{
+  transform: translate(1em, -3.5em);
+  transition: all 0.2s ease-out;
+  color: var(--label-text-color);
+  width: 0%;
+  pointer-events: none;
+
+}
+
+
+.input__styling{
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--background_color);
+  outline: 0;
+  padding:15px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  font-size: 1.2rem;
+  box-shadow: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--label-text-color);
+}
+
+.input__styling::placeholder{
+  color: transparent;
+
+}
+
+.button__styling{
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--container-background);
+  color: var(--button-text-color);
+  font-size: 1.2rem;
+  outline: 0;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+.error__container{
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--error-container-color);
+  font-weight: bold;
+  margin-top: 5px;
+}

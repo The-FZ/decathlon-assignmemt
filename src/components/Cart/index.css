@@ -1,0 +1,96 @@
+.cart__container{
+  height: 100%;
+  padding: 10px;
+  background-color: #f2f2f2;
+  overflow: auto;
+}
+
+.cart__empty__container{
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.cart__empty{
+  width:80%;
+  margin:0 auto;
+  border:1px solid #aaa;
+  padding:50px;
+  background-color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #999;
+  text-align: center;
+}
+
+.cart__items__container{
+  margin-top: 80px;
+  overflow: auto;
+  display: flex;
+  flex-direction: 'row';
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  justify-content: space-between;;
+}
+
+.cart__items__block{
+  flex:7;
+  margin-right: 5px;
+  padding:10px;
+  border:1px solid #f2f2f2;
+}
+
+.price__details__block{
+  flex:3;
+  margin-left: 5px;
+  padding: 10px;
+  border:1px solid #f2f2f2;
+}
+
+.block__heading{
+  color:#444;
+  border-bottom: 1px solid #999;
+  padding-bottom: 5px;
+}
+
+.checkout__container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.checkout{
+  cursor: pointer;
+  padding: 10px;
+  background-color: orange;
+  margin-top: 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  outline: 0;
+}
+
+.price__details__actualprice__container, 
+.price__details__actualMRP__container,
+.price__details__discount__container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-weight: bold;
+  color:#666;
+}
+
+.discount{
+  border-bottom: 1px solid #999;
+  padding-bottom: 10px;
+  color:#060;
+}
+
+.totalPrice{
+  color:#000
+}

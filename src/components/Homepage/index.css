@@ -1,0 +1,7 @@
+.main__container{
+  height: 100%;
+  background-color: #f2f2fa;
+  overflow: auto;
+  padding: 10px;
+  padding-top: 70px;
+}
